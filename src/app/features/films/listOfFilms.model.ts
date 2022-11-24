@@ -1,5 +1,7 @@
 import { FilmModel } from "./films.model";
-// this is the response model we get from the films list
+/**
+*This is the response model we get from the Films list
+*/
 export class ListOfFilmsModel {
     results: FilmModel[];
 }
