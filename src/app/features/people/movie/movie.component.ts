@@ -16,7 +16,7 @@ export class MovieComponent implements OnInit {
 	/**
 	 * The character model fetch from the url and to be used by the UI.
 	 */
-	movie: MovieModel|null = null;
+	movie: MovieModel | null = null;
 
 	constructor(private service: RequestsService) { }
 

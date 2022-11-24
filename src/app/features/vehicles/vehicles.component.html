@@ -1,11 +1,14 @@
-<div class="card" *ngFor="let vehicle of vehicles">
-    <!-- <img class="card-img-top" src="{{film.cover}}" alt="Card image cap"> -->
-    <div class="card-body">
-        <h5 class="card-title">{{vehicle.name}}</h5>
-        <p class="card-text">Model: {{vehicle.model}}</p>
-        <p class="card-text">Manufacturer: {{vehicle.manufacturer}}</p>
-        <p class="card-text">Passengers: {{vehicle.passengers}}</p>
-        <p class="card-text">Class: {{vehicle.vehicle_class}}</p>
-        <!-- <p class="card-text">Film: {{vehicle.name}}</p> -->
+<div>
+    <div class="page-title">Vehicles</div>
+    <br>
+    <ngx-loading-skeleton *ngIf="vehicles.length === 0"></ngx-loading-skeleton>
+    <div class="card" *ngFor="let vehicle of vehicles">
+        <div class="card-body">
+            <h5 class="card-title">{{vehicle.name}}</h5>
+            <p class="card-text">Model: {{vehicle.model}}</p>
+            <p class="card-text">Manufacturer: {{vehicle.manufacturer}}</p>
+            <p class="card-text">Passengers: {{vehicle.passengers}}</p>
+            <p class="card-text">Class: {{vehicle.vehicle_class}}</p>
+        </div>
     </div>
 </div>

@@ -1,17 +1,22 @@
-<div class="card" *ngFor="let film of films">
-    <img class="card-img-top" src="{{film.cover}}" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{film.title}}</h5>
-        <p class="card-text">Director: {{film.director}}</p>
-        <p class="card-text">Producer: {{film.producer}}</p>
-        <p class="card-text">Release Date: {{film.release_date}}</p>
+<div>
+    <div class="page-title">Films</div>
+    <br>
+    <ngx-loading-skeleton *ngIf="films.length === 0"></ngx-loading-skeleton>
+    <div class="content-card" *ngFor="let film of films">
+        <img src="{{film.cover}}" alt="Card image cap">
         <div>
-            <p>
-                Actors:</p>
-            <div *ngFor="let character of film.characters">
-                <ngx-character [url]="character">
-                </ngx-character>
+            <h5 class="card-title">{{film.title}}</h5>
+            <p>Director: {{film.director}}</p>
+            <p>Producer: {{film.producer}}</p>
+            <p>Release Date: {{film.release_date}}</p>
+
+            <div class="link" *ngIf="!film.isExpanded" (click)="film.isExpanded = true">Read more</div>
+            <div *ngIf="film.isExpanded">
+                <div>Actors:</div>
+                <div *ngFor="let character of film.characters">
+                    <ngx-character [url]="character">
+                    </ngx-character>
+                </div>
             </div>
         </div>
     </div>
-</div>

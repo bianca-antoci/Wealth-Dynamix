@@ -1,10 +1,9 @@
 <div class="navigation">
-    <br>
-    <div><button [routerLink]="'/people'">People</button></div>
-    <br>
-    <div><button [routerLink]="'/films'">Films</button></div>
-    <br>
-    <div><button [routerLink]="'/vehicles'">vehicles</button></div>
-    <br>
-    <div><button [routerLink]="'/planets'">Planets</button></div>
+    <div *ngFor="let menuItem of menuItems">
+        <div class="menu-item rounded-corners" [ngClass]="{'menu-item-selected' : menuItem.selected}"
+            [routerLink]="menuItem.path">
+            <div class="icon"><img [src]="menuItem.icon" /></div>
+            <div class="label">{{menuItem.label}}</div>
+        </div>
+    </div>
 </div>

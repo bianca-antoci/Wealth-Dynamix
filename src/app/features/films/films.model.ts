@@ -8,4 +8,5 @@ export class FilmModel {
     producer: string;
     release_date: string;
     characters: string[];
+    isExpanded: boolean;
 }

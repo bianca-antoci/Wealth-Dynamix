@@ -1,17 +1,28 @@
+<div>
+    <div class="page-title">People</div>
+    <br>
+    <ngx-loading-skeleton *ngIf="people.length === 0"></ngx-loading-skeleton>
 
-<div class="card" *ngFor="let person of people">
-    <img class="card-img-top" src="{{person.cover}}" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{person.name}}</h5>
-        <p class="card-text">Birth Year: {{person.birth_year}}</p>
-        <p class="card-text">Height: {{person.height}}</p>
-        <p class="card-text">Gender: {{person.gender}}</p>
-        <p class="card-text">Eye Color: {{person.eye_color}}</p>
-        <div>
-            <p>Films:</p>
-            <div *ngFor="let film of person.films">
-                <ngx-movie [url]="film">
-                </ngx-movie>
+    <div class="content-card" *ngFor="let person of people">
+        <div class="content-card-row">
+            <div>
+                <img class="card-img-top" src="{{person.cover}}" alt="Person Avatar">
+            </div>
+            <div class="description">
+                <h5 class="card-title">{{person.name}}</h5>
+                <br>
+                <p>Birth Year: {{person.birth_year}}</p>
+                <p>Height: {{person.height}}</p>
+                <p>Gender: {{person.gender}}</p>
+                <p>Eye Color: {{person.eye_color}}</p>
+                <div class="link" *ngIf="!person.isExpanded" (click)="person.isExpanded = true">Read more</div>
+                <div *ngIf="person.isExpanded">
+                    <p>Films:</p>
+                    <div *ngFor="let film of person.films">
+                        <ngx-movie [url]="film">
+                        </ngx-movie>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

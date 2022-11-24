@@ -1,5 +1,5 @@
 /**
-* This is the json model of the People entity
+* This is the json model of the People entity.
 */
 export class PersonModel {
     name: string;
@@ -9,4 +9,5 @@ export class PersonModel {
     eye_color: string;
     films: string[];
     cover: string;
+    isExpanded: boolean
 }

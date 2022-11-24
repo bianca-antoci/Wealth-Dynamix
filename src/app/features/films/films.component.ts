@@ -40,7 +40,7 @@ export class FilmsComponent implements OnInit {
 	 */
 	private getImages() {
 		for (var film of this.films) {
-			film.cover = "http://placekitten.com/400/400";
+			film.cover = "http://placekitten.com/600/400";
 		}
 
 	}
