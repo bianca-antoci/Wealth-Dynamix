@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './features/navigation/navigation.component';
 import { HeaderComponent } from './features/header/header.component';
 import { PeopleComponent } from './features/people/people.component';
+import { FilmsComponent } from './features/films/films.component';
+import { VeiclesComponent } from './features/veicles/veicles.component';
+import { PlanetsComponent } from './features/planets/planets.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +16,9 @@ import { PeopleComponent } from './features/people/people.component';
     NavigationComponent,
     HeaderComponent,
     PeopleComponent,
+    FilmsComponent,
+    VeiclesComponent,
+    PlanetsComponent
   ],
   imports: [
     BrowserModule,
