@@ -5,5 +5,12 @@
         <p class="card-text">Director: {{film.director}}</p>
         <p class="card-text">Producer: {{film.producer}}</p>
         <p class="card-text">Release Date: {{film.release_date}}</p>
+        <div>
+            <p>Character:</p>
+            <div *ngFor="let character of film.characters">
+                <ngx-character [url]="character">
+                </ngx-character>
+            </div>
+        </div>
     </div>
 </div>

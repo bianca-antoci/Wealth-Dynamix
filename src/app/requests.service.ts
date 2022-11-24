@@ -46,5 +46,11 @@ export class RequestsService {
 			headers: requestHeaders,
 		})
 	}
+	getCharacterByUrl(url: string): any {
+		const requestHeaders = this.headers();
+		return this.service.get<any>(url, {
+			headers: requestHeaders,
+		})
+	}
 }
 

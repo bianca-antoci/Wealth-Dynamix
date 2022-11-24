@@ -10,9 +10,11 @@ import { FilmsComponent } from './features/films/films.component';
 import { PlanetsComponent } from './features/planets/planets.component';
 import { VehiclesComponent } from './features/vehicles/vehicles.component';
 import { MovieComponent } from './features/people/movie/movie.component';
+import { CharacterComponent } from './features/films/character/character.component';
 
 @NgModule({
   declarations: [
+    CharacterComponent,
     AppComponent,
     NavigationComponent,
     HeaderComponent,
