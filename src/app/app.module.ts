@@ -11,9 +11,11 @@ import { PlanetsComponent } from './features/planets/planets.component';
 import { VehiclesComponent } from './features/vehicles/vehicles.component';
 import { MovieComponent } from './features/people/movie/movie.component';
 import { CharacterComponent } from './features/films/character/character.component';
+import { LoadingSkeletonComponent } from './features/loading-skeleton/loading-skeleton.component';
 
 @NgModule({
   declarations: [
+    LoadingSkeletonComponent,
     CharacterComponent,
     AppComponent,
     NavigationComponent,
