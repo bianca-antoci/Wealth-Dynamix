@@ -8,6 +8,9 @@ import { RequestsService } from "src/app/requests.service";
 	templateUrl: "./people.component.html",
 })
 export class PeopleComponent implements OnInit {
+	/**
+	 * The list of all people fetched from the server to be rendered on the UI
+	 */
 	people: any[] = [];
 
 	constructor(private service: RequestsService) { }

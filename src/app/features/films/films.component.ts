@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RequestsService } from "src/app/requests.service";
+import { FilmModel } from "./films.model";
+import { ListOfFilmsModel } from "./listOfFilms.model";
 
 
 @Component({
@@ -8,7 +10,10 @@ import { RequestsService } from "src/app/requests.service";
 	templateUrl: "./films.component.html",
 })
 export class FilmsComponent implements OnInit {
-	films: any[] = [];
+	/**
+	 * The list of all films fetched from the server to be rendered on the UI
+	 */
+	films: FilmModel[] = [];
 
 	constructor(private service: RequestsService) { }
 
@@ -23,7 +28,7 @@ export class FilmsComponent implements OnInit {
 	 */
 	private getListOfFilms() {
 		this.service.getListFilms().subscribe(
-			(data: any) => {
+			(data: ListOfFilmsModel) => {
 				this.films = data.results;
 				this.getImages();
 			},

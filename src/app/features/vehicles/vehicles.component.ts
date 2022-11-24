@@ -8,6 +8,9 @@ import { RequestsService } from "src/app/requests.service";
 	templateUrl: "./vehicles.component.html",
 })
 export class VehiclesComponent implements OnInit {
+	/**
+	 * The list of all vehicles fetched from the server to be rendered on the UI
+	 */
 	vehicles: any[] = [];
 
 	constructor(private service: RequestsService) { }

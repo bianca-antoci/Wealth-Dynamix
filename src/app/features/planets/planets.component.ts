@@ -8,7 +8,9 @@ import { RequestsService } from "src/app/requests.service";
 	templateUrl: "./planets.component.html",
 })
 export class PlanetsComponent implements OnInit {
-
+	/**
+	 * The list of all planets fetched from the server to be rendered on the UI
+	 */
 	planets: any[] = [];
 
 	constructor(private service: RequestsService) { }
