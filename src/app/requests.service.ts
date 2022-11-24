@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class RequestsService {
 	base = `https://swapi.dev/api`;
-	imageUrl = `https://placekitten.com`;
+
 	constructor(private service: HttpClient) { }
 
 	headers() {
@@ -21,17 +21,23 @@ export class RequestsService {
 			headers: requestHeaders,
 		})
 	}
-	getListPeople(id:any): any {
+	getListPeople(): any {
 		const requestHeaders = this.headers();
 		return this.service.get<any>(`${this.base}/people`, {
 			headers: requestHeaders,
 		})
 	}
-
-	// getImage(): any {
-	// 	const requestHeaders = this.headers();
-	// 	return this.service.get<any>(`${this.imageUrl}/200/300`, {
-	// 		headers: requestHeaders,
-	// 	})
-	// }
+	getListPlanets(): any {
+		const requestHeaders = this.headers();
+		return this.service.get<any>(`${this.base}/planets`, {
+			headers: requestHeaders,
+		})
+	}
+	getListVeicles(): any {
+		const requestHeaders = this.headers();
+		return this.service.get<any>(`${this.base}/vehicles`, {
+			headers: requestHeaders,
+		})
+	}
 }
+

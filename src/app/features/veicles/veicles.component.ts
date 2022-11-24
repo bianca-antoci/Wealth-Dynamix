@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { RequestsService } from "src/app/requests.service";
 
 
 @Component({
@@ -7,11 +8,21 @@ import { Component, OnInit } from "@angular/core";
 	templateUrl: "./veicles.component.html",
 })
 export class VeiclesComponent implements OnInit {
+	vehicles: any[] = [];
 
+	constructor(private service: RequestsService) { }
 
-	constructor() { }
+	ngOnInit() { this.getListOfVeicles() }
 
-	ngOnInit() { }
-
-
+	/**
+	* this function fetch veicles
+	*/
+	getListOfVeicles() {
+		this.service.getListVeicles().subscribe(
+			(data: any) => {
+				console.log(data);
+				this.vehicles = data.results;
+			},
+		);
+	}
 }

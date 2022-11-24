@@ -1,1 +1,9 @@
-<div>films works</div>
+<div class="card" *ngFor="let film of films">
+    <img class="card-img-top" src="{{film.cover}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{film.title}}</h5>
+        <p class="card-text">Director: {{film.director}}</p>
+        <p class="card-text">Producer: {{film.producer}}</p>
+        <p class="card-text">Release Date: {{film.release_date}}</p>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { RequestsService } from "src/app/requests.service";
 
 
 @Component({
@@ -8,10 +9,23 @@ import { Component, OnInit } from "@angular/core";
 })
 export class PlanetsComponent implements OnInit {
 
+	planets: any[] = [];
 
-	constructor() { }
+	constructor(private service: RequestsService) { }
 
-	ngOnInit() { }
+	ngOnInit() { this.getListOfPlanets() }
 
+	/**
+	 * this function fetch planets
+	 */
+	getListOfPlanets() {
+		this.service.getListFilms().subscribe(
+			(data: any) => {
+				console.log(data);
+				this.planets = data.results;
+
+			},
+		);
+	}
 
 }

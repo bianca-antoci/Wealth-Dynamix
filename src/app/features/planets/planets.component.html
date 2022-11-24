@@ -1,1 +1,11 @@
-<div>planets works</div>
+<div class="card" *ngFor="let planet of planets">
+    <!-- <img class="card-img-top" src="{{film.cover}}" alt="Card image cap"> -->
+    <div class="card-body">
+        <h5 class="card-title">{{planet.name}}</h5>
+        <!-- <p class="card-text">Birth Year: {{person.birth_year}}</p>
+        <p class="card-text">Height: {{person.height}}</p>
+        <p class="card-text">Gender: {{person.gender}}</p>
+        <p class="card-text">Eye Color: {{person.eye_color}}</p>
+        <p class="card-text">Film: {{person.films.title}}</p> -->
+    </div>
+</div>
