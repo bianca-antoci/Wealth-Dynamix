@@ -19,8 +19,8 @@ export class PlanetsComponent implements OnInit {
 	 * This function fetches the list of planets
 	 * and update the UI.
 	 */
-	getListOfPlanets() {
-		this.service.getListFilms().subscribe(
+	private getListOfPlanets() {
+		this.service.getListPlanets().subscribe(
 			(data: any) => {
 				this.planets = data.results;
 

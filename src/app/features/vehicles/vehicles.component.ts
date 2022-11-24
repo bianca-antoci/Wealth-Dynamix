@@ -18,7 +18,7 @@ export class VehiclesComponent implements OnInit {
 	 * This function fetches the list of veichles
 	 * and update the UI.
 	 */
-	getListOfVeicles() {
+	private getListOfVeicles() {
 		this.service.getListVeicles().subscribe(
 			(data: any) => {
 				this.vehicles = data.results;

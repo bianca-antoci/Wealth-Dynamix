@@ -6,7 +6,8 @@
         <p class="card-text">Producer: {{film.producer}}</p>
         <p class="card-text">Release Date: {{film.release_date}}</p>
         <div>
-            <p>Character:</p>
+            <p>
+                Actors:</p>
             <div *ngFor="let character of film.characters">
                 <ngx-character [url]="character">
                 </ngx-character>
