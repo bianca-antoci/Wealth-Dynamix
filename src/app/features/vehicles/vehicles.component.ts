@@ -3,11 +3,11 @@ import { RequestsService } from "src/app/requests.service";
 
 
 @Component({
-	selector: "ngx-veicles",
-	styleUrls: ["./veicles.component.scss"],
-	templateUrl: "./veicles.component.html",
+	selector: "ngx-vehicles",
+	styleUrls: ["./vehicles.component.scss"],
+	templateUrl: "./vehicles.component.html",
 })
-export class VeiclesComponent implements OnInit {
+export class VehiclesComponent implements OnInit {
 	vehicles: any[] = [];
 
 	constructor(private service: RequestsService) { }
@@ -15,12 +15,12 @@ export class VeiclesComponent implements OnInit {
 	ngOnInit() { this.getListOfVeicles() }
 
 	/**
-	* this function fetch veicles
-	*/
+	 * This function fetches the list of veichles
+	 * and update the UI.
+	 */
 	getListOfVeicles() {
 		this.service.getListVeicles().subscribe(
 			(data: any) => {
-				console.log(data);
 				this.vehicles = data.results;
 			},
 		);

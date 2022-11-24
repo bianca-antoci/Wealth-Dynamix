@@ -24,7 +24,6 @@ export class FilmsComponent implements OnInit {
 	private getListOfFilms() {
 		this.service.getListFilms().subscribe(
 			(data: any) => {
-				console.log(data);
 				this.films = data.results;
 				this.getImages();
 			},
@@ -36,7 +35,7 @@ export class FilmsComponent implements OnInit {
 	 */
 	private getImages() {
 		for (var film of this.films) {
-			film.cover = "http://placekitten.com/500/500";
+			film.cover = "http://placekitten.com/400/400";
 		}
 
 	}

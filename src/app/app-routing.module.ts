@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { FilmsComponent } from './features/films/films.component';
 import { PeopleComponent } from './features/people/people.component';
 import { PlanetsComponent } from './features/planets/planets.component';
-import { VeiclesComponent } from './features/veicles/veicles.component';
+import { VehiclesComponent } from './features/vehicles/vehicles.component';
 
 const routes: Routes = [
   { path: 'people', component: PeopleComponent },
   { path: 'films', component: FilmsComponent },
-  { path: 'veicles', component: VeiclesComponent },
+  { path: 'vehicles', component: VehiclesComponent },
   { path: 'planets', component: PlanetsComponent },
 
   { path: "", redirectTo: "people", pathMatch: "full" },

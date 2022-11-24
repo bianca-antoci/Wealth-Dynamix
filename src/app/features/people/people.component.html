@@ -1,11 +1,18 @@
 <div class="card" *ngFor="let person of people">
-    <!-- <img class="card-img-top" src="{{film.cover}}" alt="Card image cap"> -->
+    <img class="card-img-top" src="{{person.cover}}" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">{{person.name}}</h5>
         <p class="card-text">Birth Year: {{person.birth_year}}</p>
         <p class="card-text">Height: {{person.height}}</p>
         <p class="card-text">Gender: {{person.gender}}</p>
         <p class="card-text">Eye Color: {{person.eye_color}}</p>
-        <p class="card-text">Film: {{person.films.title}}</p>
+        <div>
+            <p>Films:</p>
+            <div *ngFor="let film of person.films">
+                <ngx-movie [url]="film">
+                </ngx-movie>
+            </div>
+        </div>
+
     </div>
 </div>

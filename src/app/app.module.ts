@@ -7,8 +7,9 @@ import { NavigationComponent } from './features/navigation/navigation.component'
 import { HeaderComponent } from './features/header/header.component';
 import { PeopleComponent } from './features/people/people.component';
 import { FilmsComponent } from './features/films/films.component';
-import { VeiclesComponent } from './features/veicles/veicles.component';
 import { PlanetsComponent } from './features/planets/planets.component';
+import { VehiclesComponent } from './features/vehicles/vehicles.component';
+import { MovieComponent } from './features/people/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { PlanetsComponent } from './features/planets/planets.component';
     HeaderComponent,
     PeopleComponent,
     FilmsComponent,
-    VeiclesComponent,
-    PlanetsComponent
+    VehiclesComponent,
+    PlanetsComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,

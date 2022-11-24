@@ -9,7 +9,6 @@ import { RequestsService } from "src/app/requests.service";
 })
 export class PeopleComponent implements OnInit {
 	people: any[] = [];
-	films: any[] = [];
 
 	constructor(private service: RequestsService) { }
 
@@ -18,28 +17,24 @@ export class PeopleComponent implements OnInit {
 	}
 
 	/**
-	* this function fetch people
-	*/
-	getListOfPeople() {
+	 * This function fetches the list of peoples
+	 * and update the UI.
+	 */
+	private getListOfPeople() {
 		this.service.getListPeople().subscribe(
 			(data: any) => {
-				console.log(data);
 				this.people = data.results;
-			},
-			this.getListOfFilms()
-	);
-	}
-
-	/**
-	 * this function fetch films
-	 */
-	getListOfFilms() {
-		this.service.getListFilms().subscribe(
-			(data: any) => {
-				console.log(data);
-				this.films = data.results;
-
+				this.getImages();
 			},
 		);
+	}
+	/**
+	 * This function will allocate a random image to a film
+	 */
+	private getImages() {
+		for (var person of this.people) {
+			person.cover = "http://placekitten.com/400/400";
+		}
+
 	}
 }

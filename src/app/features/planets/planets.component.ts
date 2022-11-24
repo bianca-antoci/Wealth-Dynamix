@@ -16,12 +16,12 @@ export class PlanetsComponent implements OnInit {
 	ngOnInit() { this.getListOfPlanets() }
 
 	/**
-	 * this function fetch planets
+	 * This function fetches the list of planets
+	 * and update the UI.
 	 */
 	getListOfPlanets() {
 		this.service.getListFilms().subscribe(
 			(data: any) => {
-				console.log(data);
 				this.planets = data.results;
 
 			},
