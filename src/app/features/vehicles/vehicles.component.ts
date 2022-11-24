@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RequestsService } from "src/app/requests.service";
+import { ListOfVehiclesModel } from "./listOfVehicles.model";
+import { VehicleModel } from "./vehicles.model";
 
 
 @Component({
@@ -11,7 +13,7 @@ export class VehiclesComponent implements OnInit {
 	/**
 	 * The list of all vehicles fetched from the server to be rendered on the UI
 	 */
-	vehicles: any[] = [];
+	vehicles: VehicleModel[] = [];
 
 	constructor(private service: RequestsService) { }
 
@@ -23,7 +25,7 @@ export class VehiclesComponent implements OnInit {
 	 */
 	private getListOfVeicles() {
 		this.service.getListVeicles().subscribe(
-			(data: any) => {
+			(data: ListOfVehiclesModel) => {
 				this.vehicles = data.results;
 			},
 		);

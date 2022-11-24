@@ -1,6 +1,5 @@
-
 /**
-*This is the json model of the Film entity
+* This is the json model of the Film entity
 */
 export class FilmModel {
     title: string;

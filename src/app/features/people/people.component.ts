@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RequestsService } from "src/app/requests.service";
+import { ListOfPeopleModel } from "./listOfPeople.model";
+import { PersonModel } from "./people.model";
 
 
 @Component({
@@ -11,7 +13,7 @@ export class PeopleComponent implements OnInit {
 	/**
 	 * The list of all people fetched from the server to be rendered on the UI
 	 */
-	people: any[] = [];
+	people: PersonModel[] = [];
 
 	constructor(private service: RequestsService) { }
 
@@ -25,7 +27,7 @@ export class PeopleComponent implements OnInit {
 	 */
 	private getListOfPeople() {
 		this.service.getListPeople().subscribe(
-			(data: any) => {
+			(data: ListOfPeopleModel) => {
 				this.people = data.results;
 				this.getImages();
 			},

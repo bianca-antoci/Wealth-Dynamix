@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RequestsService } from "src/app/requests.service";
+import { ListOfPlanetsModel } from "./listOfPlanets.model";
+import { PlanetModel } from "./planets.model";
 
 
 @Component({
@@ -11,7 +13,7 @@ export class PlanetsComponent implements OnInit {
 	/**
 	 * The list of all planets fetched from the server to be rendered on the UI
 	 */
-	planets: any[] = [];
+	planets: PlanetModel[] = [];
 
 	constructor(private service: RequestsService) { }
 
@@ -23,9 +25,8 @@ export class PlanetsComponent implements OnInit {
 	 */
 	private getListOfPlanets() {
 		this.service.getListPlanets().subscribe(
-			(data: any) => {
+			(data: ListOfPlanetsModel) => {
 				this.planets = data.results;
-
 			},
 		);
 	}
