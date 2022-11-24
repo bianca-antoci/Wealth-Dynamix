@@ -7,7 +7,8 @@ import { RequestsService } from './requests.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+  films: any[] = [];
+  images: any[] = [];
   constructor(
     private service: RequestsService,
   ) { }
@@ -22,8 +23,16 @@ export class AppComponent implements OnInit {
     this.service.getListFilms().subscribe(
       (data: any) => {
         console.log(data);
+        this.films = data.results;
       },
 
     );
   }
+  // getImageFromService() {
+  //   this.service.getImage().subscribe(
+  //     (data: any) => {
+  //     },
+
+  //   );
+  // }
 }

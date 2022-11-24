@@ -1,1 +1,20 @@
-<div>works</div>
+<!-- <div *ngFor="let film of films">
+    {{film.title}}
+</div> -->
+
+<ngx-header></ngx-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <ngx-navigation></ngx-navigation>
+        </div>
+
+        <div class="col-9">
+            <div class="router">
+                <router-outlet></router-outlet>
+            </div>
+
+        </div>
+
+    </div>
+</div>
