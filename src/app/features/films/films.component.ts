@@ -36,7 +36,7 @@ export class FilmsComponent implements OnInit {
 	}
 
 	/**
-	 * This function will allocate a random image to a film
+	 * This function will allocate an image to a film
 	 */
 	private getImages() {
 		for (var film of this.films) {
